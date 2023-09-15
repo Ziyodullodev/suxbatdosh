@@ -24,7 +24,7 @@ if (!empty($updates)) {
     $chat_id = $chatData['id'];
     $name = $chatData['first_name'];
     $user = getUserConfig("users/$chat_id.json", "step");
-    if (isset($user)){
+    if (is_null($user)){
         $tg->send_message("Ismingizni kiriting:");
         setUserConfig("users/$chat_id.json", "step", "name");
         exit();
@@ -68,13 +68,37 @@ if (!empty($updates)) {
         "O'qishlar qalay",
         "qalaysiz",
         "kayfiyatingiz yaxshimi",
+        "Xayr",
+        "Hayr",
+        "Yaxshi kun",
+        "Hayot qanday?",
+        "Men yaxshi yemagandim",
+        "Iltimos",
+        "Juda yaxshi",
+        "O'rganishni sevaman",
+        "Qandaydir savol bo'lsa, so'rang",
+        "Nima qilmoqchisiz?",
+        "Meni tushunmadingizmi?",
+        "O'zbek tilini o'rganmoqchiman",
+        "Ishlayapman",
+        "Yordam bering",
+        "Sizni ko'rishgandimdan xursandman",
+        "Bugun qanday kun?",
+        "Ishlar qalay?",
+        "Yomg'ir yagayotgan",
+        "Uyg'onayotganman",
+        "Meni qanday yordam bera olishim mumkin?",
+        "Yomon kun",
+        "Sog' bo'ling",
+        "Nima gap, do'st?",
+        "Tatuda oqishlar qalay?",
+        "demak, siz komputerni bilasiz",
+        "Sizga qaysi fasl yoqadi"
     ];
-    $stickerlar = [
-        
-    ];
+    
     $tg->send_message($words[rand(0, count($words) - 1)]);
 } else {
-    $tg->set_webhook("https://b07f-195-158-3-178.ngrok-free.app/hook.php");
+    $tg->set_webhook("https://e55c-195-158-3-178.ngrok-free.app/hook.php");
     echo "set webhook success";
     die();
 }
