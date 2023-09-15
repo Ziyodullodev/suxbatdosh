@@ -99,6 +99,7 @@ if (!empty($updates)) {
     $tg->send_message($words[rand(0, count($words) - 1)]);
 } else {
     $tg->set_webhook("https://e55c-195-158-3-178.ngrok-free.app/hook.php");
+    mkdir("users");
     echo "set webhook success";
     die();
 }
